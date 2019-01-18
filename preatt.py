@@ -17,7 +17,8 @@ try:
     print("Compressing:", str(argv[1]))
 except IndexError:
     print("Argument parsing error!\nAre you running this program on its own?")
-    os.system('echo An IndexError occurred while getting input files. Press any key to exit...')
+    os.system('echo An IndexError occurred while getting input files.')
+    os.system('echo Press any key to exit...')
     os.system('pause >nul')
     exit()
 
@@ -118,6 +119,14 @@ if debug == True:
     except Exception as e:
         print(e)
     os.system('pause')
+    print("Please press any key to display list of all values")
+    os.system('pause')
+    import pprint
+    print("===== Local Scope Declared")
+    print(pprint.pprint(locals()))
+    print("\n\n===== Global Scope Declared")
+    print(pprint.pprint(globals()))
+    print("===== END")
 
 current = 100                               # current image quality
 passes = 0                                  # total repetitions
